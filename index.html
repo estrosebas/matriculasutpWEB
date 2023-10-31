@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <!-- CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+            background-image: url(backe.jpg);
+            background-size: cover;      /* Ajusta la imagen para cubrir todo el área visible */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            background-position: center;  /* Centra la imagen en el viewport */
+            background-attachment: fixed; /* La imagen de fondo no se desplaza con el contenido */
+
+        }
+        select, input, button {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <select id="optionSelector" class="form-control">
+        <option value="none">Seleccione una opción</option>
+        <option value="alumno">Alumno</option>
+        <option value="representante">Representante</option>
+    </select>
+
+    <div id="alumnoFormDiv" style="display:none;">
+        <form id="alumnoForm">
+            <input type="text" name="dni_Alumno" pattern="\d{8}" placeholder="DNI Alumno" class="form-control" required><br>
+            <input type="text" name="nom_Alu" placeholder="Nombre" class="form-control" required><br>
+            <input type="text" name="ape_PAl" placeholder="Apellido Paterno" class="form-control" required><br>
+            <input type="text" name="ape_MAl" placeholder="Apellido Materno" class="form-control" required><br>
+            <input type="date" name="fec_Nac" class="form-control" required><br>
+            <select name="sexo" class="form-control">
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+            </select><br>
+            <select name="id_distritoAlum" class="form-control">
+                <option value="NULL">Seleccione</option>
+            </select><br>
+            
+            <input type="text" name="domicilio" placeholder="Domicilio" class="form-control" required><br>
+            <select name="nivel_ing" id="nivel" class="form-control">
+                <option value="Inicial">Inicial</option>
+                <option value="Primaria">Primaria</option>
+                <option value="Secundaria">Secundaria</option>
+            </select><br>
+            <select name="grado_ing" id="grado" class="form-control"></select><br>
+            <input type="text" name="colegio_ant" placeholder="Colegio Anterior" class="form-control" required><br>
+            <select name="id_habilidad" class="form-control">
+                <option value = "NULL">Seleccione</option>>
+            </select><br>
+            <select name="id_Repre" class="form-control">
+                <option value="NULL">Seleccione</option>
+            </select><br>
+            <!--
+                <input type="text" name="relacion" placeholder="Relación con el Alumno" class="form-control" required><br>
+            
+            -->
+            <select name="relacion" id="relacion" class="form-control">
+                <option value="NULL">Seleccione</option>
+                <option value="Padre">Padre</option>
+                <option value="Madre">Madre</option>
+                <option value="Abuel@">Abuel@</option>
+                <option value="Abuel@">Herman@</option>
+
+            </select><br>
+            <input type="submit" value="Registrar" class="btn btn-primary">
+          
+        </form>
+    </div>
+
+    <div id="representanteForm" style="display:none;">
+        <!-- Aquí iría el formulario para el representante si se requiere en un futuro -->
+    </div>
+    <pre id="outputArea" class="mt-3"></pre>
+</div>
+
+<!-- JS de Bootstrap y Popper.js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
